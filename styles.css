@@ -247,8 +247,11 @@ header .nav li {
 }
 /* Responsive sizing for homepage banner */
 @media (min-width: 769px) {
-    .homepage-box a.boxBtn {
-        padding: 15px 35px;
+    .homepage-box .homepage-banner-img {
+        max-width: 100%;
+        height: 100vh;
+        /* Adding the URL of larger image here */
+        content: url('/images/haukai-banner-large.png');
     }
     .homepage-box h1 {
         font-size: 4em;
@@ -256,11 +259,8 @@ header .nav li {
     .homepage-box h2 {
         font-size: 1.5em;
     }
-    .homepage-banner-img {
-        max-width: 100%;
-        height: 100vh;
-        /* Adding the URL of larger image here */
-        content: url('/images/haukai-banner-large.png');
+    .homepage-box a.boxBtn {
+        padding: 15px 35px;
     }
 }
 
