@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ------- Global styles ------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+h1 {
+    margin-bottom: 15px;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+h2 {
+    font-weight: 400;
+    font-size: 2em;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+}
+h2::after {
+    position: absolute;
+    content: "";
+    background: #A54435;
+    height: 2px;
+    width: 70px;
+    bottom: 0;
+    margin-left: -35px;
+    left: 50%;
+}
+h3 {
+	position: relative;
+	text-transform: uppercase;
+    font-size: 1em; 
+	font-weight: 400;
+	color: #232323;
+	padding: 20px 0;
+}
+p {
+    font-size: 15px;
+}
+p.intro {
+    margin: 12px 0 0;
+    line-height: 24px;
+}
+/* Styling for page banners except homepage */ 
+.box {
+    position: relative;
+    justify-content: center;
+    height: 70vh;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/* Styling for page sections */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+.section-title {
+    margin-bottom: 40px;
+}
+.section-title .overlay {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.section-title p {
+    font-size: 22px;
+}
+
+/* Responsive sizing for page sections on desktop */
+@media (min-width: 769px) {
+    section {
+        padding: 110px 100px;
+    }
+}
+
+/* ------- Bootstrap Navbar customisation ------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background-color: #232323; 
+    padding: 20px; /* Adjust padding for mobile devices */
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-toggler {
+    border-color: #fff !important;
+}
+
+.navbar-toggler-icon {
+    background-color: transparent;
+    color: #fff !important;
+}
+
+header a {
+    text-transform: capitalize;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover, 
+header h2:hover,
+header li:hover {
+    transition: transform 0.3s ease; 
+    transform: translateY(10px);
+}
+
+header h2 {
+    text-transform: uppercase;
+    padding: 10px 0;
+    margin-bottom: 15px; 
+}
+
+header .nav {
+    display: flex;
+    margin-top: 15px; 
+}
+
+header .nav li {
+    margin: 0 7px; 
+}
+
+/* Responsive sizing for header on larger screens */
+@media (min-width: 769px) {
+    header {
+        padding: 20px 40px; /* Adjust padding for larger screens */
+        align-items: center;
+    }
+
+    header .nav li {
+        margin: 0 15px; /* Adjust margin for larger screens */
+    }
+}
+/* Homepage banner styling */
+.homepage-box {
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+.homepage-banner-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.homepage-box h1 {
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+}
+.homepage-box h2 {
+    margin-bottom: 40px;
+    font-size: 1em;
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+}
+.homepage-box h2::after {
+    content: none; 
+}
+.homepage-box a.boxBtn {
+    padding: 15px 40px;
+    background: transparent;
+    border-radius: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 4px solid #fff;
+    transition: all 1s;
+}
+.homepage-box a.boxBtn:hover {
+    background: #fff;
+    color: #232323;
+}
+/* Animated arrow scroll styling */
+.scroll-indicator { 
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: fadeInUp 1s ease-out 3s forwards;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #fff; 
+    border-bottom: 0;
+    animation: arrowBounce 1s infinite alternate;
+}
+@keyframes arrowBounce {
+    0% {
+    transform: translateY(0);
+    }
+    100% {
+    transform: translateY(-5px);
+    }
+}
+@keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    }
+}
+/* Responsive sizing for homepage banner */
+@media (min-width: 769px) {
+    .homepage-box a.boxBtn {
+        padding: 15px 35px;
+    }
+    .homepage-box h1 {
+        font-size: 4em;
+    }
+    .homepage-box h2 {
+        font-size: 1.5em;
+    }
+    .homepage-banner-img {
+        max-width: 100%;
+        height: 100vh;
+        /* Adding the URL of larger image here */
+        content: url('/images/haukai-banner-large.png');
+    }
+}
+/* ----------- Homepage info sections ----------- */
+/* Menu Section */
+#our-menu {
+    position: relative; 
+    padding: 20px;
+    background: #f6f6f6;
+    margin-top: 10px;
+}
+#our-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: #f6f6f6;
+}
+#our-menu h2 {
+    margin: 10px 0;
+    padding: 10px 0;
+}
+#our-menu h2::after {
+    bottom: 0;
+    margin-left: 0;
+    left: 0;
+}
+#our-menu .menu-text {
+    padding: 15px;
+}
+#our-menu p {
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+#our-menu .button {
+    padding: 15px 35px;
+    margin-top: 10px;
+    background: transparent;
+    border-radius: 50px;
+    color: #232323;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #232323;
+    transition: all .2s;
+}
+#our-menu .button:hover {
+    background: #A54435;
+    color: #fff;
+    border: 2px solid #A54435;
+}
+#our-menu .homepage-img img {
+    background: #f6f6f6 center center no-repeat;
+    max-width: 100%;
+    height: 370px;
+    width: 100%;
+    padding-top: 15px;
+    display: block; 
+    background-size: cover; 
+    object-fit: cover; 
+}
+
+/* About Section */
+#about-us {
+    position: relative; 
+    padding: 20px;
+    background: #f6f6f6;
+    margin-top: 10px;
+}
+#about-us::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: #f6f6f6; 
+}
+#about-us::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: #f6f6f6;
+}
+#about h2 {
+    margin: 10px 0;
+    padding: 10px 0;
+}
+#about h2::after {
+    bottom: 0;
+    margin-left: 0;
+    left: 0;
+}
+#about .about-text {
+    padding: 15px;
+}
+#about .homepage-img img {
+    background: #f6f6f6 center center no-repeat;
+    max-width: 100%;
+    height: 370px;
+    width: 100%; 
+    display: block; 
+    background-size: cover; 
+    object-fit: cover; 
+}
+#about p {
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+#about-us .button {
+    padding: 15px 35px;
+    margin-top: 10px;
+    background: transparent;
+    border-radius: 50px;
+    color: #232323;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #232323;
+    transition: all .2s;
+}
+#about-us .button:hover {
+    background: #A54435;
+    color: #fff;
+    border: 2px solid #A54435;
+}
+
+/* ----------- Footer section ----------- */
+/* Contact Section */
+#footer-contact {
+    padding: 20px 0;
+    background: #232323;
+}
+#footer-contact  .contact-item p {
+    font-size: 15px;
+    color: #fff;
+}
+#footer-contact  .section-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#footer-contact  h3 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    padding: 20px 0;
+}
+#footer-contact  h3::after {
+    position: absolute;
+    content: "";
+    background: #A54435;
+    height: 2px;
+    width: 40px;
+    bottom: 0;
+    margin-left: -20px;
+    left: 50%;
+}
+#footer-contact  .contact-item {
+    margin: 20px 0 40px 0;
+}
+
+#footer-contact  a:hover, 
+#footer-contact  h3:hover
+{
+    transition: transform 0.3s ease; 
+    transform: translateY(10px); 
+}
+
+/* Footer - Social section */
+#footer-social {
+    background: #232323;
+}
+#footer-social .text-left {
+    text-align: center;
+}
+#footer-social .social {
+    text-align: center;
+    margin-top: -20px;
+    font-size: 30px; 
+}
+#footer-social .social ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+#footer-social .social ul li {
+    display: inline-block;
+    margin: 15px;
+}
+#footer-social .social-icon i {
+    color: #fff;
+    transition: all 0.3s;
+}
+#footer-social p {
+    font-size: 14px;
+    color: #fff;
+}
+#footer-social a {
+    color: #fff;
+}
+#footer-social a:hover, 
+#footer-social h2:hover,
+#footer-social li:hover
+{
+    transition: transform 0.3s ease; 
+    transform: translateY(10px); 
+}
+
+/* Responsive styling for footer social icons */
+@media (min-width: 769px) {
+    #footer-social .social
+    {
+        text-align: right; 
+    }
+    #footer-social .text-left {
+        text-align: left; 
+
+    }
+}
