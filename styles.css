@@ -481,7 +481,18 @@ h3 {
 /* --------Hours section -------- */
 #hours {
     padding: 20px;
-	background: #f6f6f6;
+    background: #f6f6f6;
+    position: relative;
+}
+#hours::after {
+    content: "";
+    display: block;
+    height: 30px; 
+    background: #f6f6f6;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px; 
 }
 #hours h3 {
 	position: relative;
@@ -530,7 +541,11 @@ h3 {
     width: 100%; 
     border: 0; 
 }
-
+@media (min-width:769px) {
+    #hours::after {
+        height:0;
+    }
+}
 /* --------Dinner menu section -------- */
 #dinner-menu {
     padding: 20px;
