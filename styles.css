@@ -478,6 +478,59 @@ h3 {
     border: 0; 
 }
 
+/* --------Hours section -------- */
+#hours {
+    padding: 20px;
+	background: #f6f6f6;
+}
+#hours h3 {
+	position: relative;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 400;
+	color: #232323;
+	padding: 20px 0;
+    text-align: center;
+}
+#hours h3::after {
+    position: absolute;
+    content: "";
+    background: #A54435;
+    height: 2px;
+    width: 40px;
+    bottom: 0;
+    margin-left: -20px;
+    left: 50%;
+}
+#hours .button {
+    padding: 15px 35px;
+    margin: 10px;
+    background: transparent;
+    border-radius: 50px;
+    color: #232323;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #232323;
+    transition: all .2s;
+}
+#hours .button:hover {
+    background: #A54435;
+    color: #fff;
+    border: 2px solid #A54435;
+}
+#calendar {
+    height: 100%;
+}
+#calendar iframe {
+    background: center center no-repeat;
+    height: 50vh;
+    padding-bottom: 30px;
+    margin: 10px 0; 
+    object-fit: cover; 
+    width: 100%; 
+    border: 0; 
+}
+
 /* --------Dinner menu section -------- */
 #dinner-menu {
     padding: 20px;
