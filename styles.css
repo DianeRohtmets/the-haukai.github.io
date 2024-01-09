@@ -158,7 +158,6 @@ header .nav li {
         padding: 20px 40px; /* Adjust padding for larger screens */
         align-items: center;
     }
-
     header .nav li {
         margin: 0 15px; /* Adjust margin for larger screens */
     }
@@ -477,6 +476,11 @@ h3 {
     width: 100%; 
     border: 0; 
 }
+@media (min-width: 769px) {
+    .contact-banner-img {
+        max-width: none;
+    }
+}
 
 /* --------Hours section -------- */
 #hours {
@@ -484,16 +488,7 @@ h3 {
     background: #f6f6f6;
     position: relative;
 }
-#hours::after {
-    content: "";
-    display: block;
-    height: 30px; 
-    background: #f6f6f6;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -30px; 
-}
+
 #hours h3 {
 	position: relative;
 	text-transform: uppercase;
@@ -546,7 +541,40 @@ h3 {
         height:0;
     }
 }
-/* --------Dinner menu section -------- */
+@media (min-width: 769px) {
+    .hours-banner-img {
+        max-width: none; /* Remove max-width for larger screens */
+    }
+}
+/* -------- About page -------- */ 
+#about-page {
+    padding: 20px;
+    background: #f6f6f6;
+    position: relative;
+}
+#about-page .homepage-img img{
+    background: #f6f6f6 center center no-repeat;
+    max-width: 100%;
+    height: 370px;
+    width: 100%; 
+    display: block; 
+    background-size: cover; 
+    object-fit: cover; 
+}
+#about-page p {
+    line-height: 24px;
+    margin: 20px;
+}
+#about-page::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: #f6f6f6;
+}
+/* -------- Dinner menu section -------- */
 #dinner-menu {
     padding: 20px;
 	background: #f6f6f6;
